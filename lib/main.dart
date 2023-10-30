@@ -1,3 +1,4 @@
+import 'package:attandence_app/login.dart';
 import 'package:attandence_app/pages/home_page.dart';
 // import 'package:attandence_app/pages/profile_detail.dart';
 
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
       //   '/clock-out': (context) => const ClockOut(), // Jika ada halaman ClockOut juga
       // },
       home: Dashboard()
+      // home: HomeHiFi()
       // home: ProfileDetail()
       // home: MyBottomNavigationBar()
 
