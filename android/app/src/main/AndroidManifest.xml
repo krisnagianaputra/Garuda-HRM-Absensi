@@ -4,7 +4,8 @@
 
     <application
         android:label="Garuda HRM"
-        android:name="${applicationName}">
+        android:name="${applicationName}"
+        android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"
             android:exported="true"

@@ -1,5 +1,4 @@
 import 'package:attandence_app/pages/home_page.dart';
-import 'package:attandence_app/pages/maps.dart';
 import 'package:flutter/material.dart';
 
 class HomeHiFi extends StatelessWidget {

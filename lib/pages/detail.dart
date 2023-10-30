@@ -1,4 +1,3 @@
-import 'package:attandence_app/navigation_bottom.dart';
 import 'package:flutter/material.dart';
 
 class Detail extends StatelessWidget {
@@ -83,7 +82,6 @@ class Detail extends StatelessWidget {
             ),
           ),
         ),
-        bottomNavigationBar: navigationBottom()
       ),
     );
   }

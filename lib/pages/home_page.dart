@@ -1,7 +1,6 @@
 import 'package:attandence_app/components/live_attendence.dart';
 import 'package:attandence_app/components/history_attendence.dart';
 import 'package:attandence_app/components/profile_bar.dart';
-import 'package:attandence_app/navigation_bottom.dart';
 import 'package:flutter/material.dart';
 
 class Dashboard extends StatefulWidget {
@@ -48,7 +47,6 @@ class _DashboardState extends State<Dashboard> {
           ),
         ),
       ),
-      bottomNavigationBar: navigationBottom()
     );
   }
 }
