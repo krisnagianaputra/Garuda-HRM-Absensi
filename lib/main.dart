@@ -21,8 +21,8 @@ class MyApp extends StatelessWidget {
       //   '/clock-in': (context) => const ClockIn(),
       //   '/clock-out': (context) => const ClockOut(), // Jika ada halaman ClockOut juga
       // },
-      home: Dashboard()
-      // home: HomeHiFi()
+      // home: Dashboard()
+      home: HomeHiFi()
       // home: ProfileDetail()
       // home: MyBottomNavigationBar()
 

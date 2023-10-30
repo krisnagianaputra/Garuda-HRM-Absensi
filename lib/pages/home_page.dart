@@ -19,11 +19,6 @@ class _DashboardState extends State<Dashboard> {
       _currentIndex = index;
     });
   }
-  final List<Widget> _pages = [
-    const BottomAppBar(),
-    Dashboard(),
-    const Detail(),
-  ];
 
   @override
   Widget build(BuildContext context) {

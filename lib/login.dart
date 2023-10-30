@@ -1,4 +1,4 @@
-import 'package:attandence_app/components/button.dart';
+import 'package:attandence_app/pages/home_page.dart';
 import 'package:attandence_app/pages/maps.dart';
 import 'package:flutter/material.dart';
 
@@ -46,38 +46,62 @@ class HomeHiFi extends StatelessWidget {
                     ),
                   ),
                 ),
-                Container(
-                  child: Positioned(
-                    left: 120,
-                    top: 500,
-                    child: MyButton(
-                      text: 'Login',
-                      onPressed: () {
-                        // Pindah ke halaman ClockInPage saat tombol Clock In ditekan
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const Maps()),
-                        );
-                      },
-                    ),
-                  ),
-                ),
-                Container(
-                  child: Positioned(
-                    left: 100,
-                    top: 572,
-                    child: MyButton(
-                      text: 'Sign Up',
-                      onPressed: () {
-                        // Pindah ke halaman ClockInPage saat tombol Clock In ditekan
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const Maps()),
-                        );
-                      },
-                    ),
+                Positioned(
+                  top: 500,
+                  left: 110,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    Dashboard()), // Pindah ke halaman detail
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.blue, // Background color
+                          onPrimary: Colors.white, // Text color
+                          shape: RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.circular(20), // Button border radius
+                          ),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 50, vertical: 20), // Button padding
+                        ),
+                        child: Text(
+                          'Login',
+                          style: TextStyle(fontSize: 18),
+                        ),
+                      ),
+                      SizedBox(height: 20), // Vertical spacing between buttons
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    Dashboard()), // Pindah ke halaman detail
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.green, // Background color
+                          onPrimary: Colors.white, // Text color
+                          shape: RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.circular(20), // Button border radius
+                          ),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 50, vertical: 20), // Button padding
+                        ),
+                        child: Text(
+                          'Sign Up',
+                          style: TextStyle(fontSize: 18),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 Positioned(
