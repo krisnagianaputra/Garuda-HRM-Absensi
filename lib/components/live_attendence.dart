@@ -1,4 +1,3 @@
-import 'package:attandence_app/components/button.dart';
 import 'package:attandence_app/pages/clock_in.dart';
 import 'package:attandence_app/pages/clock_out.dart';
 import 'package:intl/intl.dart';
@@ -83,8 +82,7 @@ class LiveAttendence extends StatelessWidget {
                           children: [
                             Padding(
                               padding: const EdgeInsets.only(right: 16),
-                              child: MyButton(
-                                text: "Clock In",
+                              child: ElevatedButton(
                                 onPressed: () {
                                   // Pindah ke halaman ClockInPage saat tombol Clock In ditekan
                                   Navigator.push(
@@ -93,12 +91,20 @@ class LiveAttendence extends StatelessWidget {
                                         builder: (context) => const ClockIn()),
                                   );
                                 },
+                                child: Text("Clock In"),
+                                style: ElevatedButton.styleFrom(
+                                    backgroundColor:
+                                        Color.fromARGB(255, 12, 53, 106),
+                                    textStyle:
+                                        TextStyle(fontWeight: FontWeight.w800),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(5),
+                                    )),
                               ),
                             ),
                           ],
                         ),
-                        MyButton(
-                          text: "Clock Out",
+                        ElevatedButton(
                           onPressed: () {
                             // Pindah ke halaman ClockOutPage saat tombol Clock Out ditekan
                             Navigator.push(
@@ -107,6 +113,14 @@ class LiveAttendence extends StatelessWidget {
                                   builder: (context) => const ClockOut()),
                             );
                           },
+                          child: Text("Clock Out"),
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor:
+                                  Color.fromARGB(255, 255, 180, 31),
+                              textStyle: TextStyle(fontWeight: FontWeight.w800),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(5),
+                              )),
                         ),
                       ],
                     ),

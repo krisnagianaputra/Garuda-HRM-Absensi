@@ -20,10 +20,7 @@ class ProfileBar extends StatelessWidget {
               child: SizedBox(
                 width: 45,
                 height: 45,
-                child: Icon(
-                  Icons.person,
-                  color: Colors.white,
-                ),
+                child: Image(image: AssetImage("lib/images/pp.png"))
               ),
             ),
             Positioned(

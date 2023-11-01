@@ -1,4 +1,4 @@
-import 'package:attandence_app/pages/home_page.dart';
+import 'package:attandence_app/components/bottom_navigation.dart';
 import 'package:flutter/material.dart';
 
 class HomeHiFi extends StatelessWidget {
@@ -12,9 +12,9 @@ class HomeHiFi extends StatelessWidget {
             height: 743,
             clipBehavior: Clip.antiAlias,
             decoration: ShapeDecoration(
-              color: Color(0xFF537FE7),
+              image: DecorationImage(image: AssetImage("lib/images/bg.png"), fit: BoxFit.cover),
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30),
+                borderRadius: BorderRadius.circular(15),
               ),
             ),
             child: Stack(
@@ -57,7 +57,7 @@ class HomeHiFi extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                                 builder: (context) =>
-                                    Dashboard()), // Pindah ke halaman detail
+                                    BottomNavigation()), // Pindah ke halaman detail
                           );
                         },
                         style: ElevatedButton.styleFrom(
@@ -82,7 +82,7 @@ class HomeHiFi extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                                 builder: (context) =>
-                                    Dashboard()), // Pindah ke halaman detail
+                                    BottomNavigation()), // Pindah ke halaman detail
                           );
                         },
                         style: ElevatedButton.styleFrom(
@@ -129,20 +129,6 @@ class HomeHiFi extends StatelessWidget {
                       fontFamily: 'Inter',
                       fontWeight: FontWeight.w800,
                       height: 0,
-                    ),
-                  ),
-                ),
-                Positioned(
-                  left: 260,
-                  top: 25,
-                  child: Container(
-                    width: 77,
-                    height: 57,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage("lib/images/logo.png"),
-                        fit: BoxFit.fill,
-                      ),
                     ),
                   ),
                 ),

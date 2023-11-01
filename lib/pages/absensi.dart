@@ -3,12 +3,12 @@ import 'package:attandence_app/components/history_attendence.dart';
 import 'package:attandence_app/components/profile_bar.dart';
 import 'package:flutter/material.dart';
 
-class Dashboard extends StatefulWidget {
+class Absensi extends StatefulWidget {
   @override
-  _DashboardState createState() => _DashboardState();
+  _AbsensiState createState() => _AbsensiState();
 }
 
-class _DashboardState extends State<Dashboard> {
+class _AbsensiState extends State<Absensi> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,8 +40,6 @@ class _DashboardState extends State<Dashboard> {
 
                 // attendance history
                 HistoryAttendence(),
-
-                SizedBox(height: 10),
               ],
             ),
           ),

@@ -1,4 +1,4 @@
-import 'package:attandence_app/components/buttom_bar.dart';
+import 'package:attandence_app/components/bottom_navigation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,9 +19,13 @@ class MyApp extends StatelessWidget {
       // },
       // home: Dashboard()
       // home: HomeHiFi()
-      home: ButtonNavigation()
-      // home: ProfileDetail()
-      // home: MyBottomNavigationBar()
+      // home: ProfilKaryawan()
+      // home: LiveAttendence()
+      // home: Settings()
+      // home: InformasiPribadi()
+      // home: BottomNavBar()
+      home: BottomNavigation(),
+
 
     );
   }
