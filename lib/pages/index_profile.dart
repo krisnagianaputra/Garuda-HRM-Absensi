@@ -5,6 +5,7 @@ import 'package:attandence_app/index%20profile/tentang_aplikasi.dart';
 import 'package:attandence_app/pages/kartu_pegawai.dart';
 import 'package:attandence_app/pages/riwayat_absensi.dart';
 import 'package:attandence_app/pages/profile_edit.dart';
+import 'package:attandence_app/wellcome_page.dart';
 import 'package:flutter/material.dart';
 
 class IndexProfile extends StatelessWidget {
@@ -25,7 +26,7 @@ class IndexProfile extends StatelessWidget {
             ),
           ),
           title: Padding(
-            padding: const EdgeInsets.only(top: 20),
+            padding: const EdgeInsets.only(top: 20, right: 50),
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -423,7 +424,7 @@ class IndexProfile extends StatelessWidget {
                     // Pindah ke halaman ClockOutPage saat tombol Clock Out ditekan
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => ProfileEdit()),
+                      MaterialPageRoute(builder: (context) => WellcomePage()),
                     );
                   },
                   child: Row(

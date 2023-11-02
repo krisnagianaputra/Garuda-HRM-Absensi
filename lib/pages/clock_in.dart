@@ -1,70 +1,178 @@
-import 'package:flutter/material.dart';
+import 'dart:io';
 import 'package:attandence_app/pages/maps.dart';
+import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
-class ClockIn extends StatelessWidget {
+class ClockIn extends StatefulWidget {
   const ClockIn({Key? key});
 
-  void _showLocationDetails(BuildContext context) {
-    showModalBottomSheet(
-      context: context,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20.0)),
-      ),
-      builder: (BuildContext context) {
-        return Container(
-          height: 400, // Sesuaikan tinggi pop-up sesuai kebutuhan
-          child: const Column(
-            children: [
-              Padding(
-                padding: EdgeInsets.all(16.0),
-                child: Text(
-                  'Detail Alamat Lokasi Check In',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              // Tambahkan widget lain untuk menampilkan detail alamat lokasi di sini
-            ],
-          ),
-        );
-      },
-    );
+  @override
+  _ClockInState createState() => _ClockInState();
+}
+
+class _ClockInState extends State<ClockIn> {
+  File? _image;
+
+  Future<void> _getImage() async {
+    final picker = ImagePicker();
+    final pickedFile = await picker.pickImage(source: ImageSource.gallery);
+
+    setState(() {
+      if (pickedFile != null) {
+        _image = File(pickedFile.path);
+      }
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [ Color.fromARGB(255, 0, 40, 171), Color.fromARGB(255, 127, 72, 223)], // Warna latar belakang (dari atas ke bawah)
+    return Scaffold(
+      backgroundColor: Color.fromARGB(255, 12, 53, 106),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            children: [
+              SizedBox(height: 10),
+              Maps(),
+              SizedBox(height: 30),
+              Container(
+                width: 400,
+                height: 510,
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 255, 255, 255),
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                  boxShadow: [
+                    BoxShadow(
+                      color:
+                          const Color.fromARGB(255, 0, 0, 0).withOpacity(0.5),
+                      spreadRadius: 3,
+                      blurRadius: 7,
+                      offset: Offset(0, 3),
+                    ),
+                  ],
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Center(
+                        child: Text(
+                          'Clock In',
+                          style: TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(12),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.pin_drop_rounded,
+                                size: 30,
+                                color: Colors.black,
+                              ),
+                              SizedBox(width: 10),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Your Location',
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 10),
+                          // Widget Maps() atau konten lokasi Anda dapat ditambahkan di sini
+                        ],
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(left: 50),
+                      child: Text(
+                        'Jl. Citra Indah Utama No.18 \nRT.04/RW.019 , Desa Sukamaju, Kecamatan\nJonggol, Kabupaten Bogor, Jawa Barat 16830',
+                        style: TextStyle(
+                          color: Color(0xFF5D5D5D),
+                          fontSize: 13,
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.w400,
+                          height: 1.2,
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    Container(
+                      margin: EdgeInsets.symmetric(horizontal: 50),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          hintText: 'Masukkan catatan...',
+                          border: OutlineInputBorder(),
+                        ),
+                        maxLines: 3,
+                        style: TextStyle(
+                          fontSize: 14,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    ElevatedButton(
+            onPressed: () async {
+              await _getImage();
+              if (_image == null) {
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      title: Text('Peringatan'),
+                      content: Text('Inputan gambar harus diisi!'),
+                      actions: [
+                        TextButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: Text('OK'),
+                        ),
+                      ],
+                    );
+                  },
+                );
+              }
+            },
+            child: Text('Pilih Gambar'),
+          ),
+
+          SizedBox(height: 20),
+
+          _image != null
+              ? Image.file(
+                  _image!,
+                  height: 100,
+                  width: 100,
+                  fit: BoxFit.cover,
+                )
+              : Container(),
+                  ],
+                ),
+              )
+            ],
           ),
         ),
-      child: Column(
-        children: [
-          const Maps(),
-          const SizedBox(height: 60),
-          // Menampilkan pop-up ketika tombol "Check In" ditekan
-          ElevatedButton(
-            onPressed: () {
-              _showLocationDetails(context);
-            },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: const Color.fromARGB(255, 25, 118, 210), // Warna latar belakang tombol
-            ),
-            child: const Text(
-              'Check In',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-            ),
-          ),
-        ],
       ),
     );
   }

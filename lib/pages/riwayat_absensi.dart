@@ -1,3 +1,4 @@
+import 'package:attandence_app/detail%20riwayat%20absensi/detail_riwayat_absensi.dart';
 import 'package:flutter/material.dart';
 
 class RiwayatAbsensi extends StatelessWidget {
@@ -187,7 +188,7 @@ class RiwayatAbsensi extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const RiwayatAbsensi()),
+                      builder: (context) => const DetailRiwayatAbsensi()),
                 );
               },
               child: Text(
