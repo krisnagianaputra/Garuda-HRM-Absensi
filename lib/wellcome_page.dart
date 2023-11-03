@@ -1,4 +1,5 @@
 import 'package:attandence_app/components/bottom_navigation.dart';
+import 'package:attandence_app/pages/login_page.dart';
 import 'package:flutter/material.dart';
 
 class WellcomePage extends StatelessWidget {
@@ -50,7 +51,7 @@ class WellcomePage extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) =>
-                            BottomNavigation()), // Pindah ke halaman detail
+                            LoginPage()), // Pindah ke halaman detail
                   );
                 },
                 style: ElevatedButton.styleFrom(

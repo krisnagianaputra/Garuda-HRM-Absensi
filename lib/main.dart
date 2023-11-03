@@ -1,4 +1,4 @@
-import 'package:attandence_app/components/bottom_navigation.dart';
+import 'package:attandence_app/wellcome_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,19 +12,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // routes: {
-      //   '/': (context) => const LiveAttendence(),
-      //   '/clock-in': (context) => const ClockIn(),
-      //   '/clock-out': (context) => const ClockOut(), // Jika ada halaman ClockOut juga
-      // },
-      // home: Dashboard()
-      // home: HomeHiFi()
-      // home: ProfilKaryawan()
-      // home: LiveAttendence()
-      // home: Settings()
-      // home: InformasiPribadi()
-      // home: BottomNavBar()
-      home: BottomNavigation(),
+      // home: BottomNavigation(),
+      // home: WebViewPage(),
+      home: WellcomePage(),
 
 
     );

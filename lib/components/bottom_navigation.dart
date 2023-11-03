@@ -1,8 +1,7 @@
-import 'package:attandence_app/halaman_utama.dart';
-import 'package:attandence_app/pages/settings.dart';
-import 'package:attandence_app/pages/transaksi.dart';
-import 'package:attandence_app/pages/absensi.dart';
-import 'package:attandence_app/pages/index_profile.dart';
+import 'package:attandence_app/navigation%20page/halaman_utama.dart';
+import 'package:attandence_app/navigation%20page/settings.dart';
+import 'package:attandence_app/navigation%20page/absensi.dart';
+import 'package:attandence_app/navigation%20page/index_profile.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavigation extends StatefulWidget {
@@ -13,11 +12,10 @@ class BottomNavigation extends StatefulWidget {
 }
 
 class _BottomNavigationState extends State<BottomNavigation> {
-  int _selectedIndex = 2;
+  int _selectedIndex = 1;
 
   final List<Widget> _pages = [
     Absensi(),
-    Transaksi(),
     HalamanUtama(),
     Settings(),
     IndexProfile(),
@@ -41,11 +39,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
           BottomNavigationBarItem(
             icon: Icon(Icons.check_box_outlined),
             label: 'Absensi',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.handshake_outlined),
-            label: 'Transaksi',
-          ), 
+          ),          
           BottomNavigationBarItem(
             icon: Icon(Icons.home_outlined),
             label: 'Home',
