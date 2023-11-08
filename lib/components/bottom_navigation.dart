@@ -12,11 +12,11 @@ class BottomNavigation extends StatefulWidget {
 }
 
 class _BottomNavigationState extends State<BottomNavigation> {
-  int _selectedIndex = 1;
+  int _selectedIndex = 0;
 
   final List<Widget> _pages = [
-    Absensi(),
     HalamanUtama(),
+    Absensi(),
     Settings(),
     IndexProfile(),
   ];
@@ -37,13 +37,13 @@ class _BottomNavigationState extends State<BottomNavigation> {
         },
         items: const [                   
           BottomNavigationBarItem(
-            icon: Icon(Icons.check_box_outlined),
-            label: 'Absensi',
-          ),          
-          BottomNavigationBarItem(
             icon: Icon(Icons.home_outlined),
             label: 'Home',
           ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.check_box_outlined),
+            label: 'Absensi',
+          ),          
           BottomNavigationBarItem(
             icon: Icon(Icons.settings_outlined),
             label: 'Settings',

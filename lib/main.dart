@@ -15,8 +15,7 @@ class MyApp extends StatelessWidget {
       // home: BottomNavigation(),
       // home: WebViewPage(),
       home: WellcomePage(),
-
-
+      // home: MyHomePage(),
     );
   }
 }

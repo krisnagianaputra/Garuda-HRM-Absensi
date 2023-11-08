@@ -56,8 +56,8 @@ class IndexProfile extends StatelessWidget {
                     BoxShadow(
                       color: const Color.fromARGB(255, 0, 0, 0)
                           .withOpacity(0.5), // warna shadow
-                      spreadRadius: 3, // seberapa jauh shadow menyebar
-                      blurRadius: 7, // seberapa buram shadow
+                      spreadRadius: 2, // seberapa jauh shadow menyebar
+                      blurRadius: 3, // seberapa buram shadow
                       offset: Offset(0, 3), // pergeseran shadow (x, y))
                     ),
                   ],

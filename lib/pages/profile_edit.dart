@@ -210,7 +210,8 @@ class ProfileEdit extends StatelessWidget {
                           ),
                           prefix: Padding(
                             padding: EdgeInsets.only(
-                                left: 20), // Sesuaikan angka sesuai dengan jarak yang diinginkan
+                                left:
+                                    20), // Sesuaikan angka sesuai dengan jarak yang diinginkan
                             child: SizedBox(width: 10),
                           ),
                         ),
@@ -247,7 +248,8 @@ class ProfileEdit extends StatelessWidget {
                           ),
                           prefix: Padding(
                             padding: EdgeInsets.only(
-                                left: 20), // Sesuaikan angka sesuai dengan jarak yang diinginkan
+                                left:
+                                    20), // Sesuaikan angka sesuai dengan jarak yang diinginkan
                             child: SizedBox(width: 10),
                           ),
                         ),
@@ -284,7 +286,8 @@ class ProfileEdit extends StatelessWidget {
                           ),
                           prefix: Padding(
                             padding: EdgeInsets.only(
-                                left: 20), // Sesuaikan angka sesuai dengan jarak yang diinginkan
+                                left:
+                                    20), // Sesuaikan angka sesuai dengan jarak yang diinginkan
                             child: SizedBox(width: 10),
                           ),
                         ),
@@ -321,7 +324,8 @@ class ProfileEdit extends StatelessWidget {
                           ),
                           prefix: Padding(
                             padding: EdgeInsets.only(
-                                left: 20), // Sesuaikan angka sesuai dengan jarak yang diinginkan
+                                left:
+                                    20), // Sesuaikan angka sesuai dengan jarak yang diinginkan
                             child: SizedBox(width: 10),
                           ),
                         ),

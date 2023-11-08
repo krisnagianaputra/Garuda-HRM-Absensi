@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:attandence_app/pages/maps.dart';
+import 'package:attandence_app/pages/lokasi.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -15,7 +15,7 @@ class _ClockInState extends State<ClockIn> {
 
   Future<void> _getImage() async {
     final picker = ImagePicker();
-    final pickedFile = await picker.pickImage(source: ImageSource.gallery);
+    final pickedFile = await picker.pickImage(source: ImageSource.camera);
 
     setState(() {
       if (pickedFile != null) {
@@ -33,11 +33,9 @@ class _ClockInState extends State<ClockIn> {
           child: Column(
             children: [
               SizedBox(height: 10),
-              Maps(),
+              // Maps(),
               SizedBox(height: 30),
               Container(
-                width: 400,
-                height: 510,
                 decoration: BoxDecoration(
                   color: Color.fromARGB(255, 255, 255, 255),
                   borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -100,21 +98,10 @@ class _ClockInState extends State<ClockIn> {
                           // Widget Maps() atau konten lokasi Anda dapat ditambahkan di sini
                         ],
                       ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(left: 50),
-                      child: Text(
-                        'Jl. Citra Indah Utama No.18 \nRT.04/RW.019 , Desa Sukamaju, Kecamatan\nJonggol, Kabupaten Bogor, Jawa Barat 16830',
-                        style: TextStyle(
-                          color: Color(0xFF5D5D5D),
-                          fontSize: 13,
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w400,
-                          height: 1.2,
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 20),
+                    ),                    
+                    SizedBox(height: 50),
+                    Lokasi(),
+                    SizedBox(height: 40,),
                     Container(
                       margin: EdgeInsets.symmetric(horizontal: 50),
                       child: TextField(
@@ -131,42 +118,54 @@ class _ClockInState extends State<ClockIn> {
                     SizedBox(
                       height: 10,
                     ),
-                    ElevatedButton(
-            onPressed: () async {
-              await _getImage();
-              if (_image == null) {
-                showDialog(
-                  context: context,
-                  builder: (BuildContext context) {
-                    return AlertDialog(
-                      title: Text('Peringatan'),
-                      content: Text('Inputan gambar harus diisi!'),
-                      actions: [
-                        TextButton(
-                          onPressed: () {
-                            Navigator.of(context).pop();
+                    Center(
+                      child: ElevatedButton(
+                        onPressed: () async {
+                          await _getImage();
+                          if (_image == null) {
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  title: Text('Peringatan'),
+                                  content: Text('Inputan gambar harus diisi!'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                      child: Text('OK'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                          }
+                        },
+                        child: Text('Pilih Gambar'),
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    Center(
+                      child: _image != null
+                          ? Image.file(
+                              _image!,
+                              width: 300,
+                              fit: BoxFit.cover,
+                            )
+                          : Container(),
+                    ),
+                    SizedBox(height: 20),
+                    Center(
+                      child: ElevatedButton(
+                          onPressed: () async {
+                            
                           },
-                          child: Text('OK'),
+                          child: Text('Kirim'),
                         ),
-                      ],
-                    );
-                  },
-                );
-              }
-            },
-            child: Text('Pilih Gambar'),
-          ),
+                    ),
+                    SizedBox(height: 50),
 
-          SizedBox(height: 20),
-
-          _image != null
-              ? Image.file(
-                  _image!,
-                  height: 100,
-                  width: 100,
-                  fit: BoxFit.cover,
-                )
-              : Container(),
                   ],
                 ),
               )

@@ -9,6 +9,7 @@ import 'package:attandence_app/fitur%20transaksi/pengajuan_reimburse.dart';
 import 'package:attandence_app/fitur%20transaksi/pengajuan_sp.dart';
 import 'package:attandence_app/fitur%20transaksi/perubahan_status_pegawai.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HalamanUtama extends StatelessWidget {
   const HalamanUtama({super.key});
@@ -28,7 +29,9 @@ class HalamanUtama extends StatelessWidget {
                     Text(
                       "Hi Iksan",
                       style:
-                          TextStyle(fontSize: 30, fontWeight: FontWeight.w300),
+                          GoogleFonts.aBeeZee(
+                            textStyle: TextStyle(fontSize: 30, fontWeight: FontWeight.w300),
+                          )
                     ),
                     SizedBox(
                       width: 145,
@@ -777,8 +780,9 @@ class HalamanUtama extends StatelessWidget {
                                         Text(
                                           "Perubahan Status\nPegawai",
                                           style: TextStyle(
-                                              color: Color.fromARGB(
-                                                  255, 12, 53, 106)),
+                                              color: Color.fromARGB(255, 12, 53, 106),
+                                              
+                                              ),
                                         ),
                                       ],
                                     ),

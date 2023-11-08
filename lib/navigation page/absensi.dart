@@ -13,16 +13,7 @@ class _AbsensiState extends State<Absensi> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Color.fromARGB(255, 27, 76, 117),
-              Color.fromARGB(255, 147, 85, 255)
-            ],
-          ),
-        ),
+      color: Color.fromARGB(255, 12, 53, 106),
         child: SafeArea(
           child: Center(
             child: Column(
